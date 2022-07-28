@@ -26,6 +26,9 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Main Menu")
+            Cursor.lockState = CursorLockMode.None;
+        
         dataGrid.PropegatePowerSources();
     }
 
@@ -38,5 +41,10 @@ public class GameManager : Singleton<GameManager>
     public void LoadLevel(string sceneToLoad)
     {
         SceneManager.LoadScene(sceneToLoad);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 }

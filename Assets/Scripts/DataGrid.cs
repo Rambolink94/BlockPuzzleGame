@@ -122,6 +122,7 @@ public class DataGrid : MonoBehaviour
         return false;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (showRailStops)
@@ -146,4 +147,5 @@ public class DataGrid : MonoBehaviour
             }
         }
     }
+#endif
 }

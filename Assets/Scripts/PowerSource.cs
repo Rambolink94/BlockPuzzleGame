@@ -13,7 +13,7 @@ public class PowerSource : MonoBehaviour, IElectrical
 
     public bool IsPowered => _isPowered;
 
-    private void Start()
+    private void Awake()
     {
         TogglePower(startPowered);
     }

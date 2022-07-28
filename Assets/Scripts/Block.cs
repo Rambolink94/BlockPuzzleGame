@@ -67,6 +67,8 @@ public class Block : MonoBehaviour, IElectrical
         _powerables = GetComponentsInChildren<IPowerable>();
         if (powerSource != null)
             powerSource.SetBlock(this);
+        
+        TogglePower(startPowered, true);
     }
 
     private void Start()
@@ -82,8 +84,8 @@ public class Block : MonoBehaviour, IElectrical
                 _currentRailStop.SetCurrentBlock(this);
         }
         
-        if (startPowered || (powerSource != null && powerSource.IsPowered))
-            PropegatePowerForward();
+        // if (startPowered || (powerSource != null && powerSource.IsPowered))
+        //     PropegatePowerForward();
     }
 
     public void Rotate(Vector3 callersPos, RotationDirection direction)
